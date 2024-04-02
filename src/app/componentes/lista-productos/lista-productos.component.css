@@ -1,0 +1,25 @@
+.hola{
+margin-top: 10%;
+} 
+i {
+    cursor:pointer;
+}
+.far fa-edit{
+    cursor:pointer;
+}
+
+
+  .botones-container button {
+    margin-right: 10px; /* Agrega espacio entre los botones */
+  }
+/* .botones-container {
+    display: list-item;
+    gap: 10px; /* Espacio entre los botones 
+    
+  } */
+
+  /* Aplica margen solo al segundo ícono para separarlos */
+  i.fas.fa-trash {
+    margin-left: 20px;
+  }
+  

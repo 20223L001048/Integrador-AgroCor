@@ -1,0 +1,44 @@
+<div class="hola">
+    <div class="container pt-4">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h3>{{ titulo }}</h3>
+                        <form class="mt-4" [formGroup]="formProveedor" (ngSubmit)="agregarOEditar()">
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Producto" formControlName="producto" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ]+$">
+                                    <div *ngIf="formProveedor.get('producto')?.invalid && (formProveedor.get('producto')?.dirty || formProveedor.get('producto')?.touched)" class="text-danger">Producto inválido</div>
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Nombre" formControlName="nombre" pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ\s]+">
+                                    <div *ngIf="formProveedor.get('nombre')?.invalid && (formProveedor.get('nombre')?.dirty || formProveedor.get('nombre')?.touched)" class="text-danger">Nombre inválido</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Apellido Paterno" formControlName="apellidop" pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ\s]+">
+                                    <div *ngIf="formProveedor.get('apellidop')?.invalid && (formProveedor.get('apellidop')?.dirty || formProveedor.get('apellidop')?.touched)" class="text-danger">Apellido paterno inválido</div>
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Apellido Materno" formControlName="apellidom" pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ\s]+">
+                                    <div *ngIf="formProveedor.get('apellidom')?.invalid && (formProveedor.get('apellidom')?.dirty || formProveedor.get('apellidom')?.touched)" class="text-danger">Apellido materno inválido</div>
+                                </div>
+                            </div>
+                            <input type="email" class="form-control form-control-lg mt-3" placeholder="Correo@example.com" formControlName="correo" pattern="^\S[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\S$">
+                            <div *ngIf="formProveedor.get('correo')?.invalid && (formProveedor.get('correo')?.dirty || formProveedor.get('correo')?.touched)" class="text-danger">Correo inválido</div>
+                            <input type="text" class="form-control form-control-lg mt-3" placeholder="Teléfono" formControlName="telefono" pattern="[0-9]{10}">
+                            <div *ngIf="formProveedor.get('telefono')?.invalid && (formProveedor.get('telefono')?.dirty || formProveedor.get('telefono')?.touched)" class="text-danger">Teléfono inválido</div>
+                            <input type="text" class="form-control form-control-lg mt-3" placeholder="Empresa" formControlName="empresa" pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ\s]+">
+                            <div *ngIf="formProveedor.get('empresa')?.invalid && (formProveedor.get('empresa')?.dirty || formProveedor.get('empresa')?.touched)" class="text-danger">Empresa inválida</div>
+                            <div class="mt-3">
+                                <button type="text" class="btn btn-secondary btn-lg me-3" routerLink="/lista-proveedores">Cancelar</button>
+                                <button type="submit" class="btn btn-dark btn-lg" [disabled]="formProveedor.invalid">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

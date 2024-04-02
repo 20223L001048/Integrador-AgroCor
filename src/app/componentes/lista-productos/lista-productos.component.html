@@ -1,0 +1,47 @@
+<div class="hola">
+ <div class="container mt-4">
+    <div class="">
+        <div class="card-body">
+            <span class="h3">
+                Lista de productos
+            </span>
+            <div class="botones-container">
+            <button class="btn btn-dark btn-lg float-end" routerLink="/nuevo-producto">Agregar producto</button>
+            <button class="btn btn-dark btn-lg float-end" routerLink="/menu">Panel</button>
+            </div>
+            
+            <table class="table table-hover mt-4">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Producto</th>
+                        <th>Código de barras</th>
+                        <th>Marca</th>
+                        <th>Presentación</th>
+                        <th>Categoría</th>
+                        <th>Precio $</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let u of productos">
+                        <td>{{ u.id }}</td>
+                        <td>{{ u.producto }}</td>
+                        <td>{{ u.codigo }}</td>
+                        <td>{{ u.marca }}</td>
+                        <td>{{ u.presentacion }}</td>
+                        <td>{{ u.categoria }}</td>
+                        <td>{{ u.precio }}</td>
+                        <td>
+                            <i class="fas fa-edit" [routerLink]="['/editar-producto/', u.id]"></i>
+                            <i class="fas fa-trash" (click)="eliminar(u)"></i>
+
+                            <!-- <i  [routerLink]="['/editar-proveedor/', u.id]">Editar</i>
+                            <i (click)="eliminar(u)">Borrar</i> -->
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+ </div>
+</div>

@@ -1,0 +1,19 @@
+i {
+    cursor:pointer;
+}
+
+.container{
+    position: relative;
+}
+
+.hola{
+    margin-top: 10%;
+}
+
+.botones-container button {
+    margin-right: 10px; /* Agrega espacio entre los botones */
+  }
+
+  i.fas.fa-trash {
+    margin-left: 20px;
+  }

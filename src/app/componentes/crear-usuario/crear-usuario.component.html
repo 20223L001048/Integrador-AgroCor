@@ -1,0 +1,33 @@
+<div class="hola">
+    <div class="container pt-4">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h3>{{ titulo }}</h3>
+                        <form class="mt-4" [formGroup]="formUsuario" (ngSubmit)="agregarOEditar()">
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Nombre" formControlName="nombre" pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ\s]+">
+                                    <div *ngIf="formUsuario.get('nombre')?.invalid && (formUsuario.get('nombre')?.dirty || formUsuario.get('nombre')?.touched)" class="text-danger">Nombre inválido</div>
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Apellidos" formControlName="apellidos" pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ\s]+">
+                                    <div *ngIf="formUsuario.get('apellidos')?.invalid && (formUsuario.get('apellidos')?.dirty || formUsuario.get('apellidos')?.touched)" class="text-danger">Apellido paterno inválido</div>
+                                </div>
+                            </div>
+                            <input type="text" class="form-control form-control-lg mt-3" placeholder="Correo" formControlName="correo" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+                            <div *ngIf="formUsuario.get('correo')?.invalid && (formUsuario.get('correo')?.dirty || formUsuario.get('correo')?.touched)" class="text-danger">correo inválido</div>
+                            <input type="password" class="form-control form-control-lg mt-3" placeholder="Contraseña" formControlName="contrasenia">
+                            <div class="mt-3">
+                                <button type="text" class="btn btn-secondary btn-lg me-3" routerLink="/lista-usuarios">Cancelar</button>
+                                <button type="submit" class="btn btn-dark btn-lg" [disabled]="formUsuario.invalid" onclick="showAlert()">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

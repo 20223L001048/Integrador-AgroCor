@@ -1,0 +1,46 @@
+<div class="hola">
+<div class="container mt-4">
+    <div class="">
+        <div class="card-body">
+            <span class="h3">
+                Lista de proveedores
+            </span>
+            <div class="botones-container">
+                <button class="btn btn-dark btn-lg float-end" routerLink="/nuevo-proveedor">Agregar proveedor</button>
+                <button class="btn btn-dark btn-lg float-end" routerLink="/menu">Panel</button>
+                
+                </div>
+            <table class="table table-hover mt-4">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Producto</th>
+                        <th>Nombre</th>
+                        <th>Apellido Paterno</th>
+                        <th>Apellido Materno</th>
+                        <th>Correo</th>
+                        <th>Telefono</th>
+                        <th>Empresa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let u of proveedores">
+                        <td>{{ u.id }}</td>
+                        <td>{{ u.producto }}</td>
+                        <td>{{ u.nombre }}</td>
+                        <td>{{ u.apellidop }}</td>
+                        <td>{{ u.apellidom }}</td>
+                        <td>{{ u.correo }}</td>
+                        <td>{{ u.telefono }}</td>
+                        <td>{{ u.empresa }}</td>
+                        <td>
+                            <i class="fas fa-edit" [routerLink]="['/editar-proveedor/', u.id]"></i>
+                            <i class="fas fa-trash" (click)="eliminar(u)"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>

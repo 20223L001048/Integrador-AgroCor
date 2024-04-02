@@ -1,0 +1,40 @@
+<div class="hola">
+    <div class="container mt-4">
+        <div class="">
+            <div class="card-body">
+                <span class="h3">
+                    Lista de usuarios
+                </span>
+                <div class="botones-container">
+                    <button class="btn btn-dark btn-lg float-end" routerLink="/crear-usuario">Agregar usuario</button>
+                    <button class="btn btn-dark btn-lg float-end" routerLink="/menu">Panel</button>
+                </div>
+                <table class="table table-hover mt-4">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th>Correo</th>
+                            <th>Contraseña</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let u of usuarios">
+                            <td>{{ u.id }}</td>
+                            <td>{{ u.nombre }}</td>
+                            <td>{{ u.apellidos }}</td>
+                            <td>{{ u.correo }}</td>
+                            <td>{{ u.contrasenia }}</td>
+                            <td>
+                                <i class="fas fa-edit" [routerLink]="['/editar-usuario/', u.id]"></i>
+                                <i class="fas fa-trash" (click)="eliminar(u)"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

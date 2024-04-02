@@ -1,0 +1,157 @@
+.contenedor{
+  display: flex;
+  background-image: url(https://64.media.tumblr.com/47063c0efeeb7adbdc1103d5c501e39e/tumblr_phrya2D5LK1xioyvwo1_540.gif);
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 0 100px rgba(0, 255, 0, 0.5); 
+  transform: scale(1.05); 
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f8f9fa; 
+  opacity: 0; 
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+  opacity: 1; 
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.card-body i {
+  font-size: 2rem; 
+  color: #28a745; 
+  opacity: 1; 
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .card-body i {
+  opacity: 0; 
+}
+
+.card-title {
+  opacity: 1; 
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .card-title {
+  opacity: 0; 
+}
+
+/* USUARIOS */
+.usuarios-card {
+  position: relative;
+}
+
+.usuarios-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://img.freepik.com/vector-premium/perfil-icono-agregar_6091-82.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0; /* Inicialmente invisible */
+  transition: opacity 0.3s ease;
+}
+
+.usuarios-card:hover::before {
+  opacity: 1; /* Hace visible al hacer hover */
+}
+
+/* PRODUCTOS */
+.productos-card {
+  position: relative;
+}
+
+.productos-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://cdn-icons-png.flaticon.com/256/7466/7466065.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0; /* Inicialmente invisible */
+  transition: opacity 0.3s ease;
+}
+
+.productos-card:hover::before {
+  opacity: 1; /* Hace visible al hacer hover */
+}
+
+/* PROVEEDORES */
+.proveedores-card {
+  position: relative;
+}
+
+.proveedores-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://static.vecteezy.com/system/resources/previews/002/869/673/non_2x/goods-packaging-service-rgb-color-icon-picking-packing-items-processes-isolated-illustration-e-commerce-logistics-optimization-product-delivery-simple-filled-line-drawing-vector.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0; /* Inicialmente invisible */
+  transition: opacity 0.3s ease;
+}
+
+.proveedores-card:hover::before {
+  opacity: 1; /* Hace visible al hacer hover */
+}
+
+/* EMPLEADOS */
+.empleados-card {
+  position: relative;
+}
+
+.empleados-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://previews.123rf.com/images/blankstock/blankstock2012/blankstock201205708/161181571-add-team-line-icon-teamwork-sign-remote-team-employees-symbol-quality-design-element-line-style-add.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0; /* Inicialmente invisible */
+  transition: opacity 0.3s ease;
+}
+
+.empleados-card:hover::before {
+  opacity: 1; /* Hace visible al hacer hover */
+}
+
+

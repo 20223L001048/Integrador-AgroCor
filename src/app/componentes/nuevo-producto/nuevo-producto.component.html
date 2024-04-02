@@ -1,0 +1,39 @@
+<div class="hola">
+    <div class="container pt-4">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h3>{{ titulo }}</h3>
+                        <form class="mt-4" [formGroup]="formProducto" (ngSubmit)="agregarOEditar()" #myForm="ngForm">
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Producto" formControlName="producto" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ]+$">
+                                    <div *ngIf="formProducto.get('producto')?.invalid && (formProducto.get('producto')?.dirty || formProducto.get('producto')?.touched)" class="text-danger">Producto inválido</div>
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Código" formControlName="codigo" required pattern="^[0-9]+$">
+                                    <div *ngIf="formProducto.get('codigo')?.invalid && (formProducto.get('codigo')?.dirty || formProducto.get('codigo')?.touched)" class="text-danger">Código inválido</div>
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Marca" formControlName="marca" pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ]+">
+                                    <div *ngIf="formProducto.get('marca')?.invalid && (formProducto.get('marca')?.dirty || formProducto.get('marca')?.touched)" class="text-danger">Marca inválida</div>
+                                </div>
+                            </div>
+                            <input type="text" class="form-control form-control-lg mt-3" placeholder="Presentación" formControlName="presentacion" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ]+$">
+                            <div *ngIf="formProducto.get('presentacion')?.invalid && (formProducto.get('presentacion')?.dirty || formProducto.get('presentacion')?.touched)" class="text-danger">Presentación inválida</div>
+                            <input type="text" class="form-control form-control-lg mt-3" placeholder="Categoria" formControlName="categoria" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ]+$">
+                            <div *ngIf="formProducto.get('categoria')?.invalid && (formProducto.get('categoria')?.dirty || formProducto.get('categoria')?.touched)" class="text-danger">Categoría inválida</div>
+                            <input type="text" class="form-control form-control-lg mt-3" placeholder="Precio" formControlName="precio" pattern="^\d+(\.\d{1,2})?$">
+                            <div *ngIf="formProducto.get('precio')?.invalid && (formProducto.get('precio')?.dirty || formProducto.get('precio')?.touched)" class="text-danger">Precio inválido</div>
+                            <div class="mt-3">
+                                <button type="text" class="btn btn-secondary btn-lg me-3" routerLink="/lista-productos">Cancelar</button>
+                                <button type="submit" class="btn btn-dark btn-lg" [disabled]="formProducto.invalid">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

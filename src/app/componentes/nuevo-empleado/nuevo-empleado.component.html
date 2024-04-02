@@ -1,0 +1,33 @@
+<div class="hola">
+    <div class="container pt-4">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h3>{{ titulo }}</h3>
+                        <form class="mt-4" [formGroup]="formEmpleado" (ngSubmit)="agregarOEditar()" #myForm="ngForm">
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Apellido paterno" formControlName="apellidop" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ]+$">
+                                    <div *ngIf="formEmpleado.get('apellidop')?.invalid && (formEmpleado.get('apellidop')?.dirty || formEmpleado.get('apellidop')?.touched)" class="text-danger">Apellido paterno inválido</div>
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Apellido materno" formControlName="apellidom" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ]+$">
+                                    <div *ngIf="formEmpleado.get('apellidom')?.invalid && (formEmpleado.get('apellidom')?.dirty || formEmpleado.get('apellidom')?.touched)" class="text-danger">Apellido materno inválido</div>
+                                </div>
+                            </div>
+                            <input type="text" class="form-control form-control-lg mt-3" placeholder="Nombre" formControlName="nombre" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ\s]+$">
+                            <div *ngIf="formEmpleado.get('nombre')?.invalid && (formEmpleado.get('nombre')?.dirty || formEmpleado.get('nombre')?.touched)" class="text-danger">Nombre inválido</div>
+                            <input type="text" class="form-control form-control-lg mt-3" placeholder="Usuario" formControlName="usuario" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ\-_@]{1,10}$">
+                            <div *ngIf="formEmpleado.get('usuario')?.invalid && (formEmpleado.get('usuario')?.dirty || formEmpleado.get('usuario')?.touched)" class="text-danger">Usuario inválido</div>
+                            <div class="mt-3">
+                                <button type="text" class="btn btn-secondary btn-lg me-3" routerLink="/lista-empleados">Cancelar</button>
+                                <button type="submit" class="btn btn-dark btn-lg" [disabled]="formEmpleado.invalid">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
