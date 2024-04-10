@@ -21,7 +21,7 @@
                             <input type="text" class="form-control form-control-lg mt-3" placeholder="Usuario" formControlName="usuario" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ\-_@]{1,10}$">
                             <div *ngIf="formEmpleado.get('usuario')?.invalid && (formEmpleado.get('usuario')?.dirty || formEmpleado.get('usuario')?.touched)" class="text-danger">Usuario inválido</div>
                             <div class="mt-3">
-                                <button type="text" class="btn btn-secondary btn-lg me-3" routerLink="/lista-empleados">Cancelar</button>
+                                <button type="text" class="btn btn-secondary btn-lg me-3" routerLink="/menu">Cancelar</button>
                                 <button type="submit" class="btn btn-dark btn-lg" [disabled]="formEmpleado.invalid">Guardar</button>
                             </div>
                         </form>

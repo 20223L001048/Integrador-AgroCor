@@ -27,7 +27,7 @@
                             <input type="text" class="form-control form-control-lg mt-3" placeholder="Precio" formControlName="precio" pattern="^\d+(\.\d{1,2})?$">
                             <div *ngIf="formProducto.get('precio')?.invalid && (formProducto.get('precio')?.dirty || formProducto.get('precio')?.touched)" class="text-danger">Precio inválido</div>
                             <div class="mt-3">
-                                <button type="text" class="btn btn-secondary btn-lg me-3" routerLink="/lista-productos">Cancelar</button>
+                                <button type="text" class="btn btn-secondary btn-lg me-3" routerLink="/menu">Cancelar</button>
                                 <button type="submit" class="btn btn-dark btn-lg" [disabled]="formProducto.invalid">Guardar</button>
                             </div>
                         </form>

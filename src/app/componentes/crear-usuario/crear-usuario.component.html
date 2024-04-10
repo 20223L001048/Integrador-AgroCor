@@ -20,7 +20,7 @@
                             <div *ngIf="formUsuario.get('correo')?.invalid && (formUsuario.get('correo')?.dirty || formUsuario.get('correo')?.touched)" class="text-danger">correo inválido</div>
                             <input type="password" class="form-control form-control-lg mt-3" placeholder="Contraseña" formControlName="contrasenia">
                             <div class="mt-3">
-                                <button type="text" class="btn btn-secondary btn-lg me-3" routerLink="/lista-usuarios">Cancelar</button>
+                                <button type="text" class="btn btn-secondary btn-lg me-3" routerLink="/menu">Cancelar</button>
                                 <button type="submit" class="btn btn-dark btn-lg" [disabled]="formUsuario.invalid" onclick="showAlert()">Guardar</button>
                             </div>
                         </form>
